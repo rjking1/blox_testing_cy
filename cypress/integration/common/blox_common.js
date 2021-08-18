@@ -1,9 +1,10 @@
 import { And, Given, Then, When } from "cypress-cucumber-preprocessor/steps";
 
 Then("load project {string}", (projectName) => {
+  cy.contains("New").click();
   cy.get("#id_file_name").select(projectName);
   cy.contains("Load").click();
-  cy.wait(3000);
+  cy.wait(4000);
 });
   
 Then("click on {string}", (el) => {
