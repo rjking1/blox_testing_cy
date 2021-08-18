@@ -11,5 +11,6 @@ Then("click on {string}", (el) => {
 });
   
 Then("check {string} has text {string}", (el, txt) => {
-  cy.get(el).should('have.text', txt)
+  // have.text does not work. why?
+  cy.get(el).should('have.value', txt)
 })
