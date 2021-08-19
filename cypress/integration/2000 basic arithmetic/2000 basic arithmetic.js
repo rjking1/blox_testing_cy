@@ -1,7 +1,10 @@
 import { And, Given, Then, When } from "cypress-cucumber-preprocessor/steps";
 
 Then("enter {string}", (s) => {
-  for(let ch of s) {
+  for (let ch of s) {
+    if (ch == ".") {
+      ch = "point";
+    }
     cy.get("#button" + ch).click();
   }
 });
