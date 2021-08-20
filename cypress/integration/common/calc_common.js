@@ -1,7 +1,15 @@
 import { And, Given, Then, When } from "cypress-cucumber-preprocessor/steps";
 
+Given("I open the calc app", () => {
+  cy.visit(Cypress.env("CALC_URL"));
+  cy.wait(1000);
+})
+
 Then("enter {string}", (s) => {
   for(let ch of s) {
+    if (ch == ".") {
+      ch = "point";
+    }
     cy.get("#button" + ch).click();
   }
 });

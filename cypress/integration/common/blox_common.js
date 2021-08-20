@@ -6,11 +6,6 @@ Given("I open the blox app", () => {
   cy.wait(1000);
 })
 
-Given("I open the calc app", () => {
-  cy.visit(Cypress.env("CALC_URL"));
-  cy.wait(1000);
-})
-
 
 Then("load project {string}", (projectName) => {
   cy.contains("New").click();
@@ -24,6 +19,5 @@ Then("click on {string}", (el) => {
 });
   
 Then("check {string} has text {string}", (el, txt) => {
-  // have.text does not work. why?
   cy.get(el).should('have.value', txt)
 })
