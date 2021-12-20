@@ -2,6 +2,8 @@ Feature: load project
 
   for basic IDE tests
 
+  # need key value database on pybase !!!
+
   Scenario: load project
     Given I open the blox app
     And   load project "jsf"

@@ -20,6 +20,6 @@ Then("press {string}", (s) => {
 
 Then("result is {string}", (s) => {
   cy.wait(500);
-  cy.get('#input1').should('have.value', s)
+  cy.get('#inputx').should('have.value', s)
 });
 

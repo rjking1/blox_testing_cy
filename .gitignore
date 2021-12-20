@@ -7,4 +7,3 @@ cypress/downloads/
 cypress/reports/
 
 notes-do-not-commit.txt
-cypress.env.json

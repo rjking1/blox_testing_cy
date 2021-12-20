@@ -4,6 +4,7 @@ Feature: Basic arithmetic tests of uploaded RPN calculator
 
   Scenario: addition test
     Given I open the calc app
+     Then press "clear"
      Then enter "1234567890"
      Then press "enter"
      Then enter "9876543210"
@@ -18,10 +19,9 @@ Feature: Basic arithmetic tests of uploaded RPN calculator
     Then  press "mult"
     Then  result is "-1.44" 
 
-  Scenario: auto enter test
+  Scenario: enter and auto enter test
     Then  enter "1.2"
     Then  press "enter"
-    Then  enter "1.2"
     Then  press "sign"
     Then  press "mult"
     Then  result is "-1.44" 
@@ -30,7 +30,7 @@ Feature: Basic arithmetic tests of uploaded RPN calculator
     Then  press "div"
     Then  result is "1.2" 
 
-  Scenario: stack test
+  Scenario: auto enter and stack test
     Then  enter "2"
     Then  press "enter"
     Then  enter "3"
@@ -41,3 +41,18 @@ Feature: Basic arithmetic tests of uploaded RPN calculator
     Then  press "mult"
     Then  press "minus"
     Then  result is "-14" 
+
+  Scenario: roll and x <> y tests
+    Then  enter "1"
+    Then  press "enter"
+    Then  enter "22"
+    Then  press "enter"
+    Then  enter "333"
+    Then  press "enter"
+    Then  enter "4444"
+    Then  press "rolld"
+    Then  press "rolld"
+    Then  press "rolld"
+    Then  result is "1" 
+    Then  press "swap"
+    Then  result is "4444" 
