@@ -56,3 +56,23 @@ Feature: Basic arithmetic tests of uploaded RPN calculator
     Then  result is "1" 
     Then  press "swap"
     Then  result is "4444" 
+
+  Scenario: more roll and x <> y tests
+    Then  enter "2"
+    Then  press "enter"
+    Then  enter "3"
+    Then  press "swap"
+    Then  enter "4"
+    Then  press "rolld"
+    Then  result is "2"
+    Then  press "rolld"
+    Then  result is "3"
+
+  Scenario: clx test
+    Then  enter "55"
+    Then  press "enter"
+    Then  enter "89"
+    Then  press "clx"
+    Then  enter "44"
+    Then  press "plus"
+    Then  result is "99"
